@@ -41,6 +41,7 @@
     function color(type) {
         if (type === "folder") return folderColor;
         if (type === "file") return fileColor;
+        if (type === "Root") return "Black";
     }
     // the template we defined earlier
     myDiagram.nodeTemplate =
@@ -59,7 +60,7 @@
 
     var model = $(go.TreeModel);
     model.nodeDataArray = [
-        { key: "1", name: "/", type: "folder", description: "Root Directory. Contains main html files" },
+        { key: "1", name: "/", type: "Root", description: "Root Directory. Contains main html files" },
         { key: "2", parent: "1", type: "folder", name: "assets", description: "To keep assets of the site" },
         { key: "3", parent: "2", type: "folder", name: "Documents", description: "Contains seemymachines docs" },
         { key: "4", parent: "2", type: "folder", name: "fonts", description: "Fonts used in site" },
@@ -71,13 +72,16 @@
         { key: "10", parent: "8", type: "folder", name: "js", },
         { key: "11", parent: "1", type: "folder", name: "industries", description: "Contains inner pages of industries page" },
         { key: "12", parent: "1", type: "folder", name: "styles", description: "Contains the less files for development" },
-        { key: "13", parent: "12", type: "folder", name: "less", },
+        { key: "13", parent: "12", type: "folder", name: "less", description: "Contains main and common less files" },
         { key: "14", parent: "1", type: "folder", name: "scripts", description: "contains the uncompressed js files for development" },
-        { key: "15", parent: "1", type: "file", name: "index.html", },
-        { key: "16", parent: "1", type: "file", name: "...", },
+        { key: "15", parent: "1", type: "file", name: "index.html", description: "Home page" },
+        { key: "16", parent: "1", type: "file", name: "...", description: "Other html files" },
         { key: "17", parent: "3", type: "file", name: "SeeMyMachine-Brochure.pdf", },
         { key: "18", parent: "4", type: "folder", name: "Helvetica", description: "Helvetica Fonts" },
         { key: "19", parent: "4", type: "folder", name: "OpenSans", description: "OpenSans Fonts" },
+        { key: "20", parent: "13", type: "folder", name: "Common", description: "Common Less files" },
+        { key: "21", parent: "13", type: "file", name: "home.less", description: "Less file for home page" },
+        { key: "22", parent: "13", type: "file", name: "...", description: "Other Less files" },
 
     ];
     myDiagram.model = model;
