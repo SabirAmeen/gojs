@@ -94,6 +94,8 @@
         { key: "31", parent: "9", type: "file", name: "...", description: "other css files" },
         { key: "32", parent: "10", type: "file", name: "home.min.js", description: "home page js file" },
         { key: "33", parent: "10", type: "file", name: "...", description: "other js files" },
+        { key: "34", parent: "5", type: "file", name: "alarm.svg", description: "alarm image for 404 page" },
+        { key: "35", parent: "5", type: "file", name: "...", description: "other image files" },
 
 
     ];
